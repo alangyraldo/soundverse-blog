@@ -1,28 +1,43 @@
-// aa abrimos y cerramos el meni
-document.getElementById('burger').addEventListener('click', () => {
-  document.getElementById('menu').classList.toggle('abierto');
-});
+// El menú ya lo maneja Bootstrap (navbar-toggler), no hace falta JS propio.
 
-// formulario de contacto pero igual solo se sumula el envio 
+// Formulario de contacto: muestra una alerta en vivo de Bootstrap
+// con botón para cerrar.
 const form = document.getElementById('form');
-if (form) {
+const contenedorAlerta = document.getElementById('alertaContenedor');
+
+if (form && contenedorAlerta) {
   form.addEventListener('submit', e => {
     e.preventDefault();
-    alert('gracias, recibimos tu mensaje');
+
+    contenedorAlerta.innerHTML = `
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        Mensaje enviado
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Cerrar">
+        </button>
+      </div>
+    `;
+
     form.reset();
   });
 }
 
+// Botón para volver arriba.
 const btnArriba = document.getElementById('btnArriba');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    btnArriba.style.display = 'block';
-  } else {
-    btnArriba.style.display = 'none';
-  }
-});
+if (btnArriba) {
+  window.addEventListener('scroll', () => {
+    btnArriba.style.display =
+      window.scrollY > 300 ? 'block' : 'none';
+  });
 
-btnArriba.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+  btnArriba.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}

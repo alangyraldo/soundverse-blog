@@ -1,78 +1,252 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SOUNDVERSE</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css"></head>
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOUNDVERSE</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Único archivo CSS propio -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 
 <body>
-<header class="nav">
-  <a class="logo" href="index.html">SOUNDVERSE</a>
-  <button class="burger" id="burger" aria-label="Abrir menú">☰</button>
-  <nav id="menu">
-    <a href="index.html">Inicio</a>
-    <a href="nosotros.html">Quiénes somos</a>
-    <a href="contacto.html">Contacto</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fs-4" href="index.html">SOUNDVERSE</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#menu" aria-controls="menu" aria-expanded="false"
+              aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Quiénes somos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
   </nav>
-</header>
-<main>
-  <section class="hero">
-  <div class="hero-texto">
-    <h1>La música se siente<br><span class="gris">antes de entenderse.</span></h1>
-    <p>Historias, géneros y artistas que cambian la forma en que escuchamos.</p>
-    <a class="btn" href="#articulos">Leer artículos</a>
-  </div>
-  <img src="img/primer.png" alt="Persona escuchando música">
-</section>
-  <section class="generos">
-    <h2>Explora por género</h2>
-    <div class="lista-generos">
-      <a class="genero" href="#articulos">🎸 Rock</a>
-      <a class="genero" href="#articulos">🎤 Pop</a>
-      <a class="genero" href="#articulos">🎧 Electrónica</a>
-      <a class="genero" href="#articulos">🎙️ Hip-hop</a>
-      <a class="genero" href="#articulos">🎷 Jazz</a>
-      <a class="genero" href="#articulos">💿 Clásica</a>
-    </div>
-  </section>
-  <section class="fila" id="articulos">
-    <div class="texto">
-      <h2>Cómo la IA está cambiando la música</h2>
-      <p>Hoy cualquier persona puede describir una idea, un ánimo o una historia y recibir una canción completa. Hablamos de qué herramientas existen y qué significa esto para quienes crean música.</p>
-    </div>
-    <img src="img/imagen2.png" alt="Persona usando una app de música con IA">
-  </section>
 
-  <section class="fila invertida">
-    <div class="texto">
-      <h2>El vinilo no se fue</h2>
-      <p>Mientras el streaming domina, los discos de vinilo siguen vendiéndose. Repasamos por qué el sonido físico sigue enamorando a una generación que creció con playlists.</p>
-    </div>
-    <img src="img/billie.png " alt="Disco de vinilo girando">
-  </section>
+  <!-- CONTENIDO: columna izquierda | principal | columna derecha -->
+    <div class="container py-4">
 
-  <section class="fila">
-    <div class="texto">
-      <h3>Tres géneros para descubrir esta semana</h3>
-      <p>Del hip-hop más dramático a la electrónica suave, armamos una lista para salir de lo de siempre.</p>
+  <!-- Contenido principal -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero p-4 p-md-5 mb-5">
+
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-6">
+
+          <h1 class="display-5 fw-semibold">
+            La música se siente
+            <br>
+            <span class="text-secondary">
+              antes de entenderse.
+            </span>
+          </h1>
+
+          <p class="lead">
+            Historias, géneros y artistas que cambian
+            la forma en que escuchamos.
+          </p>
+
+          <a
+            class="btn btn-warning rounded-pill px-4 fw-bold"
+            href="#articulos">
+            Leer artículos
+          </a>
+
+        </div>
+
+        <div class="col-lg-6 text-center">
+
+          <img
+            src="img/primer.png"
+            class="img-fluid"
+            alt="Persona escuchando música">
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GÉNEROS -->
+    <section class="mb-5">
+
+      <h2 class="h3 mb-3">
+        Explora por género
+      </h2>
+
+      <div class="d-flex flex-wrap gap-2">
+
+        <a class="btn btn-outline-light rounded-pill"
+           href="#articulos">
+          🎸 Rock
+        </a>
+
+        <a class="btn btn-outline-light rounded-pill"
+           href="#articulos">
+          🎤 Pop
+        </a>
+
+        <a class="btn btn-outline-light rounded-pill"
+           href="#articulos">
+          🎧 Electrónica
+        </a>
+
+        <a class="btn btn-outline-light rounded-pill"
+           href="#articulos">
+          🎙️ Hip-hop
+        </a>
+
+        <a class="btn btn-outline-light rounded-pill"
+           href="#articulos">
+          🎷 Jazz
+        </a>
+
+        <a class="btn btn-outline-light rounded-pill"
+           href="#articulos">
+          💿 Clásica
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- ARTÍCULO 1 -->
+    <section
+      class="row align-items-center g-4 mb-5"
+      id="articulos">
+
+      <div class="col-md-6">
+
+        <h2 class="h3">
+          Cómo la IA está cambiando la música
+        </h2>
+
+        <p class="text-secondary">
+          Hoy cualquier persona puede describir una idea,
+          un ánimo o una historia y recibir una canción
+          completa. Hablamos de qué herramientas existen
+          y qué significa esto para quienes crean música.
+        </p>
+
+      </div>
+
+      <div class="col-md-6">
+
+        <img
+          src="img/imagen2.png"
+          class="img-fluid img-brillo"
+          alt="Persona usando una app de música con IA">
+
+      </div>
+
+    </section>
+
+
+    <!-- ARTÍCULO 2 -->
+    <section class="row align-items-center g-4 mb-5">
+
+      <div class="col-md-6 order-md-2">
+
+        <h2 class="h3">
+          El vinilo no se fue
+        </h2>
+
+        <p class="text-secondary">
+          Mientras el streaming domina, los discos de
+          vinilo siguen vendiéndose. Repasamos por qué
+          el sonido físico sigue enamorando a una generación
+          que creció con playlists.
+        </p>
+
+      </div>
+
+      <div class="col-md-6 order-md-1">
+
+        <img
+          src="img/billie.png"
+          class="img-fluid img-brillo"
+          alt="Disco de vinilo girando">
+
+      </div>
+
+    </section>
+
+
+    <!-- ARTÍCULO 3 -->
+    <section class="row align-items-center g-4 mb-5">
+
+      <div class="col-md-6">
+
+        <h2 class="h3">
+          Tres géneros para descubrir esta semana
+        </h2>
+
+        <p class="text-secondary">
+          Del hip-hop más dramático a la electrónica
+          suave, armamos una lista para salir de lo
+          de siempre.
+        </p>
+
+      </div>
+
+      <div class="col-md-6">
+
+        <img
+          src="img/imagen4.png"
+          class="img-fluid img-brillo"
+          alt="Auriculares sobre fondo rojo">
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark border-top border-secondary py-4 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h4 class="h6 text-warning">SOUNDVERSE</h4>
+          <p class="mb-0 text-secondary small">Un blog sobre música, escrito por estudiantes.</p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="h6 text-warning">Autores</h4>
+          <p class="mb-1 text-secondary small">Nicole Betancourt – nicole@soundverse.com</p>
+          <p class="mb-1 text-secondary small">Luisa Fernanda Sepulveda – luisa@soundverse.com</p>
+          <p class="mb-0 text-secondary small">Alan Melo – alan@soundverse.com</p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="h6 text-warning">Contacto</h4>
+          <p class="mb-0 text-secondary small">SOUNDVERSE@gmail.com</p>
+        </div>
+      </div>
     </div>
-    <img src="img/imagen4.png" alt="Auriculares sobre fondo rojo">
-  </section>
-</main>
-<footer class="footer">
-  <div>
-    <h4>SOUNDVERSE</h4>
-    <p>Un blog sobre música, escrito por estudiantes.</p>
-  </div>
-  <div>
-    <h4>Autores</h4>
-    <p>Nicole Betancourt, Luisa Fernanda Sepulveda y Alan Melo, </p>
-  </div>
-  <div>
-    <h4>Contacto</h4>
-    <p>SOUNDVERSE@gmail.com</p>
-  </div>
-</footer>
-<button id="btnArriba">↑</button>
-<script src="js/main.js"></script>
-</body></html>
+  </footer>
+
+  <button id="btnArriba">↑</button>
+
+  <!-- Bootstrap JS (CDN), justo antes de cerrar el body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

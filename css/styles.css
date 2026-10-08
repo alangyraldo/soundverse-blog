@@ -1,290 +1,422 @@
-/* colores del sitio */
+
 :root {
-  --negro: #050505;
-  --rojo: #b3120f;
-  --rojo-oscuro: #4a0505;
-  --naranja: #ff7a2f;
-  --amarillo: #ffc21a;
-  --gris: #7a7a7a;
+  --sv-bg: #080808;
+  --sv-bg-secondary: #151515;
+  --sv-red: #7d0508;
+  --sv-red-dark: #350003;
+  --sv-orange: #ff6b1a;
+  --sv-yellow: #ffc107;
+  --sv-white: #f5f5f5;
+  --sv-gray: #9b9b9b;
+  --sv-border: #555;
 }
 
-/*estilos generales para la pagina */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* -------------------------
+   GENERAL
+------------------------- */
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--negro);
-  color: white;
-  line-height: 1.6;
-}
+  background-color: var(--sv-bg);
+  color: var(--sv-white);
 
-img {
-  max-width: 100%;
-}
+  font-family: "Poppins", sans-serif;
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
-/* estilo para la navbar  */
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 6%;
-  background-color: #111;
-  border-bottom: 1px solid #333;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
-}
-
-.nav nav {
-  display: flex;
-  gap: 10px;
-}
-
-.nav nav a {
-  padding: 8px 18px;
-  border: 1px solid #666;
-  border-radius: 50px;
-  font-size: 14px;
-}
-
-.nav nav a:hover,
-.nav nav a.activo {
-  background-color: white;
-  color: var(--negro);
-}
-
-.burger {
-  display: none;
-  background: none;
-  border: 1px solid white;
-  color: white;
-  padding: 4px 12px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* el hero */
-.hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 120px 6% 0;
-  background: radial-gradient(circle at 80% 30%, var(--naranja), var(--rojo), var(--rojo-oscuro), var(--negro));
 }
 
-
-.hero-texto {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 45%;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-brand {
+  font-family: "Playfair Display", serif;
 }
 
-.hero img {
-  width: 95%;
-  height: auto;
-  align-self: flex-end;
-  display: block;
+p {
+  line-height: 1.7;
 }
-.hero.corto {
-  height: 60vh;
-  min-height: 0;
+
+.text-secondary {
+  color: var(--sv-gray) !important;
+}
+
+/* -------------------------
+   NAVBAR
+------------------------- */
+
+.navbar {
+  background-color: #0b0b0b !important;
+  border-bottom: 1px solid #333;
+
+  min-height: 78px;
+}
+
+.navbar-brand {
+  color: var(--sv-white) !important;
+  font-size: 1.7rem !important;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #ddd !important;
+
+  padding: 0.65rem 1rem !important;
+
+  border-radius: 30px;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: white !important;
+  background-color: #252525;
+}
+
+/* Botón del menú en móviles */
+
+.navbar-toggler {
+  border-color: #555;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(255, 193, 7, 0.25);
+}
+
+/* -------------------------
+   CONTENEDOR PRINCIPAL
+------------------------- */
+
+main {
+  width: 100%;
+}
+
+/* -------------------------
+   HERO
+------------------------- */
+
+.hero {
+  position: relative;
+
   overflow: hidden;
+
+  min-height: 390px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 80% 35%,
+      #ff751c 0%,
+      #d9271c 35%,
+      #680307 70%,
+      #210003 100%
+    );
+
+  border-radius: 22px !important;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
 }
 
 .hero h1 {
-  font-size: 60px;
-  line-height: 1.1;
   text-transform: uppercase;
-}
 
-.gris {
-  color: var(--gris);
+  font-size: clamp(2.5rem, 5vw, 4.8rem);
+
+  line-height: 0.98;
+
+  letter-spacing: -1px;
 }
 
 .hero p {
-  max-width: 480px;
+  max-width: 650px;
+
+  font-size: 1.15rem;
 }
 
-/* botones estilos */
-.btn {
-  display: inline-block;
-  width: fit-content;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 50px;
-  background-color: var(--amarillo);
-  color: var(--negro);
-  font-family: inherit;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
+/* Imagen del hero */
 
-.btn:hover {
-  background-color: var(--naranja);
-}
+.hero img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
 
-/* seciones con texto a un lado e imagen */
-.fila {
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 20px 30px rgba(0, 0, 0, 0.55)
+  );
+
+  position: relative;
+  z-index: 1;
+}
+Y agrega esto debajo:
+
+.hero .col-lg-6:last-child {
   display: flex;
   align-items: center;
-  gap: 60px;
-  max-width: 1200px;
-  margin: auto;
-  padding: 90px 6%;
+  justify-content: center;
+
+  min-height: 300px;
 }
 
-.fila.invertida {
-  flex-direction: row-reverse;
+/* -------------------------
+   BOTONES
+------------------------- */
+
+.btn-warning {
+  background-color: var(--sv-yellow);
+  border-color: var(--sv-yellow);
+
+  color: #111;
+
+  font-weight: 600;
 }
 
-.fila .texto {
-  width: 50%;
+.btn-warning:hover {
+  background-color: #ffcf35;
+  border-color: #ffcf35;
+
+  color: #111;
+
+  transform: translateY(-2px);
 }
 
-.fila img {
-  width: 50%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 30px;
-  background: linear-gradient(135deg, var(--rojo), var(--naranja));
-  box-shadow: 0 0 50px rgba(255, 60, 20, 0.4);
+.btn {
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
+/* -------------------------
+   GÉNEROS
+------------------------- */
 
-
-h2,
-h3 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 14px;
+.btn-outline-light {
+  border-color: #555;
+  color: #ddd;
 }
 
-.fila p {
-  color: #cccccc;
-  font-weight: 300;
-}
+.btn-outline-light:hover {
+  background-color: var(--sv-red);
+  border-color: var(--sv-red);
 
-/* la pagina de contacto */
-.contacto {
-  display: flex;
-  gap: 30px;
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 6% 90px;
-}
-
-.tarjeta {
-  flex: 1;
-  padding: 30px;
-  border: 1px solid #444;
-  border-radius: 30px;
-  background-color: var(--rojo-oscuro);
-}
-
-.tarjeta h3:first-child {
-  margin-top: 0;
-}
-
-.tarjeta label {
-  display: block;
-  margin-bottom: 16px;
-  font-size: 14px;
-}
-
-.tarjeta input,
-.tarjeta textarea {
-  width: 100%;
-  margin-top: 6px;
-  padding: 10px;
-  border: 1px solid #888;
-  border-radius: 12px;
-  background-color: black;
   color: white;
-  font-family: inherit;
 }
 
-/* el footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  padding: 50px 6%;
-  background-color: black;
-  border-top: 1px solid #333;
+/* -------------------------
+   ARTÍCULOS
+------------------------- */
+
+.img-brillo {
+  width: 100%;
+
+  max-height: 420px;
+
+  object-fit: cover;
+
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 0 35px rgba(125, 5, 8, 0.45);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.footer h4 {
-  margin-bottom: 8px;
-  color: var(--amarillo);
+.img-brillo:hover {
+  transform: scale(1.02);
+
+  box-shadow:
+    0 0 50px rgba(255, 80, 30, 0.35);
 }
 
-.footer p {
-  color: #aaaaaa;
-  font-size: 14px;
+/* -------------------------
+   TARJETAS / SECCIONES
+------------------------- */
+
+.border-secondary {
+  border-color: #444 !important;
 }
 
-/* seccion de generos */
-.generos {
-  max-width: 1200px;
-  margin: auto;
-  padding: 60px 6% 0;
+/* -------------------------
+   FORMULARIOS
+------------------------- */
+
+.form-control {
+  background-color: #141414;
+
+  border: 1px solid #555;
+
+  color: white;
+
+  border-radius: 10px;
+
+  padding: 0.8rem 1rem;
 }
 
-.lista-generos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+.form-control:focus {
+  background-color: #181818;
+
+  color: white;
+
+  border-color: var(--sv-orange);
+
+  box-shadow:
+    0 0 0 0.2rem rgba(255, 107, 26, 0.2);
 }
 
-.genero {
-  padding: 12px 24px;
-  border: 1px solid #666;
-  border-radius: 50px;
-  background-color: var(--rojo-oscuro);
+.form-control::placeholder {
+  color: #888;
 }
 
-.genero:hover {
-  background-color: var(--naranja);
-  color: var(--negro);
+.form-label {
+  font-weight: 500;
 }
 
-.hero img.grande {
-  width: 85%;
-  flex-shrink: 0;
-  margin-bottom: -230px;
+/* -------------------------
+   CONTACTO
+------------------------- */
+
+.contact-card {
+  background-color: #111;
+
+  border: 1px solid #444;
+
+  border-radius: 20px;
+
+  padding: 2rem;
+
+  height: 100%;
 }
+
+.contact-info {
+  padding: 1rem 0;
+}
+
+.contact-info h2 {
+  margin-bottom: 0.4rem;
+}
+
+/* -------------------------
+   EQUIPO
+------------------------- */
+
+.team-card {
+  background-color: #111;
+
+  border: 1px solid #444;
+
+  border-radius: 18px;
+
+  padding: 1.5rem;
+
+  height: 100%;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--sv-orange);
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+footer {
+  background-color: #0b0b0b !important;
+
+  border-top: 1px solid #333 !important;
+}
+
+footer h4 {
+  color: var(--sv-yellow);
+}
+
+footer p {
+  color: #888;
+}
+
+/* -------------------------
+   BOTÓN VOLVER ARRIBA
+------------------------- */
 
 #btnArriba {
   display: none;
+
   position: fixed;
+
   bottom: 24px;
   right: 24px;
-  width: 46px;
-  height: 46px;
+
+  z-index: 1030;
+
+  width: 48px;
+  height: 48px;
+
   border: none;
+
   border-radius: 50%;
-  background-color: var(--amarillo);
-  color: var(--negro);
-  font-size: 20px;
+
+  background-color: var(--sv-yellow);
+
+  color: #111;
+
+  font-size: 22px;
+
   cursor: pointer;
+
+  box-shadow:
+    0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+#btnArriba:hover {
+  background-color: #ffcf35;
+
+  transform: translateY(-3px);
+}
+
+/* -------------------------
+   RESPONSIVE
+------------------------- */
+
+@media (max-width: 767.98px) {
+
+  .navbar {
+    min-height: 68px;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding: 2rem !important;
+
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero img {
+    max-height: 260px;
+  }
+
+  .img-brillo {
+    max-height: 300px;
+  }
 }
