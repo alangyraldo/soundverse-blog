@@ -158,7 +158,7 @@ main {
   position: relative;
   z-index: 1;
 }
-Y agrega esto debajo:
+  
 
 .hero .col-lg-6:last-child {
   display: flex;
@@ -168,9 +168,7 @@ Y agrega esto debajo:
   min-height: 300px;
 }
 
-/* -------------------------
-   BOTONES
-------------------------- */
+
 
 .btn-warning {
   background-color: var(--sv-yellow);
